@@ -3,7 +3,7 @@ distancia = 0
 soma = 0
 i = 0
 
-for i in len(pontos):
+for i in range(0,len(pontos)):
     if i+1 > len(pontos):
         n = 0
     else:
