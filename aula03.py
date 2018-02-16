@@ -4,10 +4,10 @@ soma = 0
 i = 0
 
 for i in range(0,len(pontos)):
-    if i+1 > len(pontos):
+    if i+1 == len(pontos):
         n = 0
     else:
-        n = i+1
-    distancia = ((abs(pontos[i,0]-pontos[n,0]))**2 + (abs(pontos[i,1]-pontos[n,1]))**2)**(1/2)
+        n = (i+1)
+    distancia = ((abs(pontos[i][0]-pontos[n][0]))**2 + (abs(pontos[i][1]-pontos[n][1]))**2)**(1/2)
     soma += distancia
 print(soma)
