@@ -1,5 +1,5 @@
 criar = True  #  se for preciso criar o arquivo
-inserir = False  #  se quando for o arquivo o usuario for inserir dados
+inserir = True  #  se quando for o arquivo o usuario for inserir dados
 
 if criar:
     arq = open('arquivo.txt', 'w')

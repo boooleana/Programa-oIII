@@ -1,7 +1,7 @@
 class ManipularArquivo(object):
     def __init__(self):
         self.lista = []  #  lista de informações (maça)
-        self.inserir = False  #  váriavel que controla se será inserido os dados do arquivo ou não
+        self.inserir = True  #  váriavel que controla se será inserido os dados do arquivo ou não
         criar = True   #  se for preciso criar o arquivo
         if criar:
             self.run_criar_arquivo()
@@ -10,7 +10,7 @@ class ManipularArquivo(object):
     def abrir_arquivo(self, tipo = 'r'):
         self.arquivo = open('arquivo.txt', tipo)  #  default abre o arquivo para leitura
 
-    def criar_lista(self):
+    def ler_arquivo(self):
         texto = self.arquivo.readlines()  # lê todas as linhas do arquivo
         for string in texto:  #  percorre o texto
             self.lista.append(string.split())  #  coloca as informações em uma lista
@@ -45,7 +45,7 @@ class ManipularArquivo(object):
 
     def run_ler_arquivo(self):  #  roda a classe para ler o arquivo
         self.abrir_arquivo()
-        self.criar_lista()
+        self.ler_arquivo()
         self.fechar_arquivo()
 
 class Maca(object):  #  objeto para a maça
@@ -63,8 +63,8 @@ class Cesta(object):  #  cesta de maças
         self.lista_de_macas = []  #  lista de maças (lista de objetos)
 
     def encher_cesta(self): #lê arquivo e cadastra na classe Maça
-        lista = ManipularArquivo()  #  lê arquivo usando a classe ManipularArquivo
-        for i in lista.lista:  #  percorre pela lista criada em ManipularArquivo
+        self.lista = ManipularArquivo()  #  lê arquivo usando a classe ManipularArquivo
+        for i in self.lista.lista:  #  percorre pela lista criada em ManipularArquivo
             self.lista_de_macas.append(Maca(i))  #  cria as maças com os valores da lista(ManipularArquivo) e atribui valores em lista_de_macas
 
     def to_string(self):  #  mostra o conteúdo da cesta
@@ -77,11 +77,9 @@ class Cesta(object):  #  cesta de maças
             i.to_string()
 
 if __name__ == "__main__":  #  programa principal
-    arquivo = ManipularArquivo()  #  (para testar o to_string de ManipularArquivo, pois não estava sendo usada)
-    arquivo.to_string()
-
     cesta = Cesta()
     cesta.encher_cesta()
+    cesta.lista.to_string()  #  para executar o to_string de ManipularArquivo (requesito do trabalho)
     cesta.to_string()
 
 
@@ -91,7 +89,7 @@ Verificação se todas os métodos estãos sendo usados (requesito g do trabalho
 Classe: ManipularArquivo
     Métodos: __init__ = ok
             abrir_arquivo = ok
-            criar_lista = ok
+            ler_arquivo = ok
             criar_arquivo = ok
             to_string = ok
             fechar_arquivo = ok
