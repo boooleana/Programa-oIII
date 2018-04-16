@@ -1,7 +1,7 @@
 class ManipularArquivo(object):
     def __init__(self):
         self.lista = []  #  lista de informações (maça)
-        self.inserir = False  #  váriavel que controla se será inserido os dados do arquivo ou não
+        self.inserir = True  #  váriavel que controla se será inserido os dados do arquivo ou não
         criar = True   #  se for preciso criar o arquivo
         if criar:
             self.run_criar_arquivo()

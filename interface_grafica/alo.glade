@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="window1">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="l_nome">
+            <property name="width_request">52</property>
+            <property name="height_request">25</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Nome</property>
+          </object>
+          <packing>
+            <property name="x">35</property>
+            <property name="y">22</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txt_nome">
+            <property name="width_request">168</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="x">103</property>
+            <property name="y">17</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="l_endereco">
+            <property name="width_request">62</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Endereço</property>
+          </object>
+          <packing>
+            <property name="x">38</property>
+            <property name="y">63</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="txt_endereco">
+            <property name="width_request">151</property>
+            <property name="height_request">49</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">70</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="l_telefone">
+            <property name="width_request">58</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Telefone</property>
+          </object>
+          <packing>
+            <property name="x">40</property>
+            <property name="y">143</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="txt_telefone">
+            <property name="width_request">168</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="x">110</property>
+            <property name="y">138</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submit">
+            <property name="label" translatable="yes">Enviar</property>
+            <property name="width_request">90</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">133</property>
+            <property name="y">204</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
