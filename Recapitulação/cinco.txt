@@ -1,0 +1,4 @@
+nome;compra_anterior;data_compra_anterior;recomendacao;desconto;email
+José;Fraldas descartáveis;10/02/2018;Lenços umedecidos;30;jose@gmail.com
+Maria;Xampu;05/03/2018;Condicionador;40;maria@hotmail.com
+Paulo;Arroz integral;12/03/2018;Feijão orgânico;35;paulo@zipmail.com.br
