@@ -33,11 +33,11 @@ class MalaDireta:
         self.mala = """
 Prezado(a) <CLIENTE>,
 
-em sua última visita ao nosso estabelecimento (<DATA>),
+Em sua última visita ao nosso estabelecimento (<DATA>),
 registramos que você adquiriu <PRODUTO>.
 Estamos com grandes descontos previstos para o próximo feriado (dia 1 de maio).
 Por isso, gostaríamos de recomendar a você especialmente o produto <RECOMENDADO>,
-que se encontra com <DESCONTO>por cento de descontoself.
+que se encontra com <DESCONTO> porcento de desconto.
 
 --
 Esse email foi enviado para <EMAIL>.
@@ -45,9 +45,10 @@ Respeitamos sua privacidade, para não receber mais nossas mensagens
 envie email para sair@minhaloja.com.br, com o assunto 'SAIR'.
 
 Atenciosamente,
-Equipe de interação com o clienta da minhalija.com.br
+Equipe de interação com o clienta da minhaloja.com.br
 
                         """
+        self.valores = []
         self.atributos()
         self.lista_email = []
         self.variaveis()
@@ -58,30 +59,30 @@ Equipe de interação com o clienta da minhalija.com.br
             if i[0] != "nome":
                 cliente = i
 
-        d = {"nome": 0,
+                d = {"nome": 0,
                       "produto": 1,
                       "data":2,
                       "recomendado": 3,
                       "desconto": 4,
                       "email": 5
-        }
+                }
 
-        self.atributos = [("<CLIENTE>", cliente[d["nome"]]),
-                          ("<DATA>",cliente[d["data"]]),
-                          ("<PRODUTO>", cliente[d["produto"]]),
-                          ("<RECOMENDADO>", cliente[d["recomendado"]]),
-                          ("<DESCONTO>", cliente[d["desconto"]]),
-                          ("<EMAIL>", cliente[d["email"]])]
+                self.valores.append([("<CLIENTE>", cliente[d["nome"]]),
+                                  ("<DATA>",cliente[d["data"]]),
+                                  ("<PRODUTO>", cliente[d["produto"]]),
+                                  ("<RECOMENDADO>", cliente[d["recomendado"]]),
+                                  ("<DESCONTO>", cliente[d["desconto"]]),
+                                  ("<EMAIL>", cliente[d["email"]])])
 
     def variaveis(self):
-        email = self.mala
+        for i in self.valores:
+            email = self.mala[:]
+            for j in i:
+                email = email.replace(j[0], j[1])
 
-        for i in self.atributos:
-            email = email.replace(i[0], i[1])
-
-        self.lista_email = email
-        print(self.lista_email)
+            self.lista_email.append(email)
 
 
 
 a = MalaDireta()
+print(a.lista_email[1])
