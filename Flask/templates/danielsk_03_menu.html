@@ -1,0 +1,16 @@
+{% if session["usuario"] %}
+
+Bem vindo ao Menu! Você está conectado como:
+<b>{{ session["usuario"] }}</b>
+
+(<a href=/logout>Sair</a>).
+
+<br>Esse é o menu da aplicação.
+
+<br>Basta agora construir o menu da aplicação.<hr>
+<img src=/static/sucesso.jpg>
+
+{% else %}
+Acesso indevido. Por favor,
+<a href=/abrir_form_login>efetue o login</a>.
+{% endif %}
